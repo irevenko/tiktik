@@ -17,12 +17,12 @@ func SetupTUI(tiktoks []string) {
 	defer ui.Close()
 
 	l := widgets.NewList()
-	l.Title = "tiktik"
 
+	l.Title = "tiktik"
 	l.Rows = tiktoks
 	l.TextStyle = ui.NewStyle(ui.ColorYellow)
-	l.WrapText = false
-	l.SetRect(0, 0, 160, 40)
+	l.WrapText = true
+	l.SetRect(0, 0, 150, 35)
 
 	ui.Render(l)
 

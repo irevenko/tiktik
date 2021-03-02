@@ -11,11 +11,11 @@ import (
 
 func main() {
 	tiktoks := t.FetchTikTokTrends()
-	// tiktoks2 := t.FetchTikTokTrends(strconv.Itoa(2))
-
-	//	toks := unique(append(tiktoks, tiktoks2...))
 
 	tui.SetupTUI(tiktoks)
+
+	// tiktoks2 := t.FetchTikTokTrends(strconv.Itoa(2))
+	//	toks := unique(append(tiktoks, tiktoks2...))
 
 }
 
