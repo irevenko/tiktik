@@ -18,8 +18,6 @@ func SetupTUI(links []string, descs []string, ids []string) {
 	}
 	defer ui.Close()
 
-	l := widgets.NewList()
-
 	var tiktoks []string
 
 	for i, v := range links {
@@ -28,18 +26,22 @@ func SetupTUI(links []string, descs []string, ids []string) {
 		tiktoks = append(tiktoks, v)
 	}
 
+	l := widgets.NewList()
 	l.Title = "TikTok Trends"
-	l.TitleStyle.Fg = ui.ColorCyan
+	l.TitleStyle = ui.NewStyle(ui.ColorCyan)
+	l.TextStyle = ui.NewStyle(ui.ColorWhite)
+	l.SelectedRowStyle = ui.NewStyle(ui.ColorCyan)
 	l.Rows = tiktoks
 	l.WrapText = false
-	l.SetRect(0, 5, 150, 35)
+	l.SetRect(0, 4, 150, 35)
 
 	g := widgets.NewGauge()
 	g.Title = "Downloading Progress"
-	g.SetRect(0, 0, 40, 4)
+	g.SetRect(0, 0, 150, 3)
 	g.Percent = 0
+	g.LabelStyle = ui.NewStyle(ui.ColorGreen)
 	g.BarColor = ui.ColorBlue
-	g.BorderStyle.Fg = ui.ColorWhite
+	g.BorderStyle.Fg = ui.ColorCyan
 	g.TitleStyle.Fg = ui.ColorCyan
 
 	ui.Render(l, g)
@@ -52,11 +54,11 @@ func SetupTUI(links []string, descs []string, ids []string) {
 		case "q", "<C-c>":
 			return
 		case "j", "<Down>":
+			g.Percent = 0
 			l.ScrollDown()
-			g.Percent = 0
 		case "k", "<Up>":
-			l.ScrollUp()
 			g.Percent = 0
+			l.ScrollUp()
 		case "e", "<Enter>":
 			if strings.HasPrefix(l.Rows[l.SelectedRow], "http") {
 				OpenBrowser(l.Rows[l.SelectedRow])
