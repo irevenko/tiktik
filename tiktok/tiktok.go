@@ -20,7 +20,7 @@ func FetchTikTokTrends() ([]string, []string, []string) {
 	var descSlice []string
 	var usersSlice []string
 
-	for i := 0; i < 2; i++ {
+	for i := 0; i < 3; i++ {
 		req, err := http.NewRequest(method, requestUrl, payload)
 		if err != nil {
 			fmt.Println(err)

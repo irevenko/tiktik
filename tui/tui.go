@@ -23,7 +23,9 @@ func SetupTUI(links []string, descs []string, ids []string) {
 
 	for i, v := range links {
 		tiktoks = append(tiktoks, strconv.Itoa(i+1)+") User: "+ids[i])
-		if descs[i] != "" {
+		if descs[i] == "" {
+			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") Desc: "+"No desc")
+		} else {
 			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") Desc: "+descs[i])
 		}
 		tiktoks = append(tiktoks, strconv.Itoa(i+1)+") "+v)

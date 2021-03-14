@@ -1,7 +1,10 @@
 # tiktik 📱🥴 - TikTok Terminal CLient
+> Name inspiration - <a href="https://www.youtube.com/watch?v=h1M8oY0Uvi4">this yt vid</a>
+<p align="center"><img src="preview.png"></p>
 
-# Keybinds
+Huge Thanks to <a href="https://github.com/Hedgehogues">Egor</a> who wrote parsing part
 
+# Keybinds ⌨️
 | UI       | Keybind              | Description                      |
 |----------|----------------------|----------------------------------|
 | Common   | `j` / `down arrow`     | Move down by one row.            |
@@ -14,8 +17,23 @@
 | Link selected   | `e` / `enter` | Open TikTok with Browser.    |
 | Link selected   | `d` / `Ctrl-D` | Download TikTok.    |
 
+# Contributing 🤝
+Contributions, issues and feature requests are welcome! 👍 <br>
+Feel free to check [open issues](https://github.com/irevenko/tiktik/issues).
 
+# Quick Start 🚀
+```git clone https://github.com/irevenko/tiktik.git``` <br>
+```cd tiktik``` <br>
+```go get -d ./...``` <br>
+```go build``` <br>
+
+# What I Learned 🧠
+- cookies, headers
 
 # ToDo
-- [x] Keybinding for refreshing tiktoks
-- [x] prettify output (more fields)
+- [ ] More fields to display (likes, comments stats, creation date, music name)
+- [ ] Search by user, hashtags
+- [ ] Keybind for tiktoks number (current default is 95-100 vids)
+
+# License 📑 
+(c) 2021 Ilya Revenko. [MIT License](https://tldrlegal.com/license/mit-license)
