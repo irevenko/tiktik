@@ -1,4 +1,4 @@
-# tiktik 📱🥴 - TikTok Terminal CLient
+# tiktik 📱🥴 - TikTok Terminal Client
 > Name inspiration - <a href="https://www.youtube.com/watch?v=h1M8oY0Uvi4">this yt vid</a>
 <p align="center"><img src="preview.png"></p>
 
@@ -31,9 +31,9 @@ Feel free to check [open issues](https://github.com/irevenko/tiktik/issues).
 - cookies, headers
 
 # ToDo
-- [ ] More fields to display (likes, comments stats, creation date, music name)
 - [ ] Search by user, hashtags
-- [ ] Keybind for tiktoks number (current default is 95-100 vids)
+- [ ] Keybind for tiktoks number (current default num is ~90-100 vids)
+- [ ] Fancy UI (colors)
 
 # License 📑 
 (c) 2021 Ilya Revenko. [MIT License](https://tldrlegal.com/license/mit-license)

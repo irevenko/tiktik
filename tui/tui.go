@@ -7,13 +7,14 @@ import (
 	"runtime"
 	"strconv"
 	"strings"
+	"time"
 
 	t "../tiktok"
 	ui "github.com/gizak/termui"
 	"github.com/gizak/termui/widgets"
 )
 
-func SetupTUI(links []string, descs []string, ids []string) {
+func SetupTUI(links []string, descs []string, users []string, dates []float64, stats []string) {
 	if err := ui.Init(); err != nil {
 		log.Fatalf("failed to initialize termui: %v", err)
 	}
@@ -22,11 +23,15 @@ func SetupTUI(links []string, descs []string, ids []string) {
 	var tiktoks []string
 
 	for i, v := range links {
-		tiktoks = append(tiktoks, strconv.Itoa(i+1)+") User: "+ids[i])
+		date := time.Unix(int64(dates[i]), 0)
+		layout := "2006-01-02 15:04:05"
+		formatted := date.Format(layout)
+
+		tiktoks = append(tiktoks, strconv.Itoa(i+1)+") "+users[i]+" "+stats[i]+" Date: "+formatted)
 		if descs[i] == "" {
-			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") Desc: "+"No desc")
+			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") Description: "+"no desc")
 		} else {
-			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") Desc: "+descs[i])
+			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") Description: "+descs[i])
 		}
 		tiktoks = append(tiktoks, strconv.Itoa(i+1)+") "+v)
 	}
@@ -88,8 +93,8 @@ func SetupTUI(links []string, descs []string, ids []string) {
 			}
 		case "r", "<C-r>":
 			ui.Close()
-			links, descs, ids := t.FetchTikTokTrends()
-			SetupTUI(links, descs, ids)
+			links, descs, ids, dates, stats := t.FetchTikTokTrends()
+			SetupTUI(links, descs, ids, dates, stats)
 		}
 
 		ui.Render(l, g)

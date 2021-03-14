@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	links, descs, ids := t.FetchTikTokTrends()
+	links, descs, users, dates, stats := t.FetchTikTokTrends()
 
-	tui.SetupTUI(links, descs, ids)
+	tui.SetupTUI(links, descs, users, dates, stats)
 }
