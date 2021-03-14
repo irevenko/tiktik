@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	t "../tiktok"
-	ui "github.com/gizak/termui"
-	"github.com/gizak/termui/widgets"
+	ui "github.com/gizak/termui/v3"
+	"github.com/gizak/termui/v3/widgets"
+	t "github.com/irevenko/tiktik/tiktok"
 )
 
 func SetupTUI(links []string, descs []string, users []string, dates []float64, stats []string) {
@@ -27,11 +27,11 @@ func SetupTUI(links []string, descs []string, users []string, dates []float64, s
 		layout := "2006-01-02 15:04:05"
 		formatted := date.Format(layout)
 
-		tiktoks = append(tiktoks, strconv.Itoa(i+1)+") "+users[i]+" "+stats[i]+" Date: "+formatted)
+		tiktoks = append(tiktoks, strconv.Itoa(i+1)+") "+users[i]+" "+stats[i]+" [Date:](fg:magenta) "+formatted)
 		if descs[i] == "" {
-			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") Description: "+"no desc")
+			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") [Description:](fg:blue) "+"no desc")
 		} else {
-			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") Description: "+descs[i])
+			tiktoks = append(tiktoks, strconv.Itoa(i+1)+") [Description:](fg:blue) "+descs[i])
 		}
 		tiktoks = append(tiktoks, strconv.Itoa(i+1)+") "+v)
 	}

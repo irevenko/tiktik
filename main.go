@@ -5,8 +5,8 @@ import (
 	_ "image/jpeg"
 	_ "image/png"
 
-	t "./tiktok"
-	tui "./tui"
+	t "github.com/irevenko/tiktik/tiktok"
+	tui "github.com/irevenko/tiktik/tui"
 )
 
 func main() {

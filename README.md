@@ -2,7 +2,7 @@
 > Name inspiration - <a href="https://www.youtube.com/watch?v=h1M8oY0Uvi4">this yt vid</a>
 <p align="center"><img src="preview.png"></p>
 
-Huge Thanks to <a href="https://github.com/Hedgehogues">Egor</a> who wrote parsing part
+Huge Thanks to <a href="https://github.com/Hedgehogues">Egor</a> who wrote the parsing part
 
 # Keybinds ⌨️
 | UI       | Keybind              | Description                      |
@@ -33,7 +33,6 @@ Feel free to check [open issues](https://github.com/irevenko/tiktik/issues).
 # ToDo
 - [ ] Search by user, hashtags
 - [ ] Keybind for tiktoks number (current default num is ~90-100 vids)
-- [ ] Fancy UI (colors)
 
 # License 📑 
 (c) 2021 Ilya Revenko. [MIT License](https://tldrlegal.com/license/mit-license)

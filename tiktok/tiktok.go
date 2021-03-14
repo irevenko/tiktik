@@ -143,8 +143,8 @@ func FetchTikTokTrends() ([]string, []string, []string, []float64, []string) {
 				continue
 			}
 
-			statsStr := "Plays: " + strconv.FormatFloat(plays, 'f', 0, 64) + " Shares: " + strconv.FormatFloat(shares, 'f', 0, 64) + " Comments: " + strconv.FormatFloat(comments, 'f', 0, 64)
-			userStr := "User: @" + id + " Followers: " + strconv.FormatFloat(followers, 'f', 0, 64)
+			statsStr := "[Plays:](fg:yellow) " + strconv.FormatFloat(plays, 'f', 0, 64) + " [Shares:](fg:blue) " + strconv.FormatFloat(shares, 'f', 0, 64) + " [Comments:](fg:red) " + strconv.FormatFloat(comments, 'f', 0, 64)
+			userStr := "[User:](fg:yellow) @" + id + " [Followers:](fg:green) " + strconv.FormatFloat(followers, 'f', 0, 64)
 
 			usersSlice = append(usersSlice, userStr)
 			statsSlice = append(statsSlice, statsStr)
