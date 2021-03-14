@@ -1,1 +1,1 @@
-# tiktik 📱🥴
+# tiktik 📱🥴 - TikTok Terminal CLient
