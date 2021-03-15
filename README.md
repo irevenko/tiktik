@@ -4,6 +4,9 @@
 
 Huge Thanks to <a href="https://github.com/Hedgehogues">Egor</a> who wrote the parsing part
 
+# Installation 🔨
+```go get -u github.com/irevenko/tiktik``` && ```tiktik```
+
 # Keybinds ⌨️
 | UI       | Keybind              | Description                      |
 |----------|----------------------|----------------------------------|
